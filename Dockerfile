@@ -44,10 +44,10 @@ RUN set -eux \
         curl-dev g++ \
     && apk add --quiet --no-cache --virtual .build-deps \
     # Thumbor
-    && pip install --quiet --no-cache-dir --upgrade pip \
+    # && pip install --quiet --no-cache-dir --upgrade pip \
     && pip install --quiet --no-cache-dir \
         # python build tool
-        setuptools \
+        # setuptools \
         # Jinja2 and envtpl are required to work with environment variables
         Jinja2==3.1.* envtpl==0.7.* \
         # sentry is required for error tracking
