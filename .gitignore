@@ -5,3 +5,8 @@ vendor
 *.pri
 *.pub
 *.log
+
+# ignore testing .env or config file
+.env
+thumbor.conf
+thumbor.conf.tpl

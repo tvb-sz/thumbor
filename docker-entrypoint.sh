@@ -12,9 +12,13 @@ if [ -f /app/.env ]; then
   env
 fi
 
-if [ ! -f /usr/local/thumbor/thumbor.conf ]; then
-  if [ -f /usr/local/thumbor/thumbor.conf.tpl ]; then
-    envtpl /usr/local/etc/thumbor.conf.tpl  --allow-missing --keep-template --output /usr/local/thumbor/thumbor.conf
+if [ ! -f /app/thumbor.conf ];then
+  # if not exist config file, but exist config template file, then generate it use ENV
+  if [ -f /app/thumbor/thumbor.conf.tpl ]; then
+    envtpl /app/thumbor.conf.tpl --allow-missing --keep-template --output /app/thumbor.conf
+  else
+    # none all, touch empty config file
+    touch /app/thumbor.conf
   fi
 fi
 
@@ -29,7 +33,7 @@ if [ -z ${THUMBOR_PORT+x} ]; then
 fi
 
 if [ "$1" = 'thumbor' ]; then
-    exec thumbor --port=$THUMBOR_PORT --conf=/usr/local/thumbor/thumbor.conf $LOG_PARAMETER
+    exec thumbor --port=$THUMBOR_PORT --conf=/app/thumbor.conf $LOG_PARAMETER
 fi
 
 exec "$@"
