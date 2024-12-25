@@ -59,6 +59,7 @@ RUN set -eux \
         thumbor==${thumborVersion} \
         thumbor-aws==0.8.* \
         google-cloud-storage thumbor-gcs \
+        thumbor-icon-handler \
         cairosvg \
     # Cleanup
     && apk del .build-deps \
