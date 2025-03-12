@@ -1,6 +1,9 @@
-# thumbor
+# thumbor for docker
 
 latest thumbor docker image base on alpine
+
+* source file at: [https://github.com/tvb-sz/thumbor](https://github.com/tvb-sz/thumbor)
+* docker image at: [https://hub.docker.com/r/nmgsz/thumbor](https://hub.docker.com/r/nmgsz/thumbor)
 
 ## config thumbor
 
