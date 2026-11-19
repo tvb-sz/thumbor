@@ -9,15 +9,15 @@ jobs:
   build-and-release:
     strategy:
       matrix:
-        pythonVersion: [ "3.9", "3.10", "3.11", "3.12" ]
+        pythonVersion: [ "3.10", "3.11", "3.12", "3.13" ]
         include:
-          - pythonVersion: '3.9'
-            supportArch: 'linux/amd64,linux/arm64/v8'
           - pythonVersion: '3.10'
             supportArch: 'linux/amd64,linux/arm64/v8'
           - pythonVersion: '3.11'
             supportArch: 'linux/amd64,linux/arm64/v8'
           - pythonVersion: '3.12'
+            supportArch: 'linux/amd64,linux/arm64/v8'
+          - pythonVersion: '3.13'
             supportArch: 'linux/amd64,linux/arm64/v8'
     runs-on: ubuntu-latest
     steps:
