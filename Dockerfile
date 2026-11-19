@@ -8,13 +8,13 @@ ARG pythonVersion='3.12'
 
 FROM python:${pythonVersion}-alpine
 
-# docker build --build-arg pythonVersion='3.10' --build-arg thumborVersion='7.7.1' -t test-thumbor -f Dockerfile .
+# docker build --build-arg pythonVersion='3.12' --build-arg thumborVersion='7.8.0' -t test-thumbor -f Dockerfile .
 # docker run -p 8888:8881 --env THUMBOR_PORT=8881 -v ${PWD}/.env:/app/.env -v ${PWD}/thumbor.conf.tpl:/app/thumbor.conf.tpl test-thumbor
 
 LABEL Maintainer="team tvb sz<nmg-sz@tvb.com>" Description="thumbor docker image base on alpine."
 
 # define installed thumbor version args
-ARG thumborVersion='7.7.0'
+ARG thumborVersion='7.8.0'
 
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -57,7 +57,7 @@ RUN set -eux \
         # pycurl is required for thumbor
         "pycurl==7.*,>=7.45.2" \
         thumbor==${thumborVersion} \
-        thumbor-aws==0.8.* \
+        thumbor-aws==1.1.* \
         google-cloud-storage thumbor-gcs \
         thumbor-icon-handler \
         cairosvg \
