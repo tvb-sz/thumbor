@@ -41,7 +41,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            name=php:${{ matrix.pythonVersion }}-alpine
+            name=python:${{ matrix.pythonVersion }}-alpine
           tags: |
             type=ref,event=branch
             type=ref,event=pr
